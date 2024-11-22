@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #f7f8fa;
+    background-color: #02082b;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -65,7 +65,7 @@ header {
 }
 
 .btn-portada {
-    background-color: #f7f8fa;
+    background-color: #02082b;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -93,7 +93,7 @@ form input, form select, form button {
 }
 
 form button {
-    background-color: #f7f8fa;
+    background-color: #02082b;
     color: white;
     cursor: pointer;
 }

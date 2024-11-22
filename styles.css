@@ -68,8 +68,8 @@ section {
     right: 0;
     bottom: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
 }
 
 .imagen-portada {

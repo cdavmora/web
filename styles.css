@@ -7,14 +7,51 @@ body {
     color: #333;
 }
 
+/* Encabezado */
 header {
-    background-color: #02082b;
+    background-color: #4caf50;
     color: white;
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para la portada */
+/* Menú de navegación */
+nav .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav .menu li {
+    display: inline;
+}
+
+nav .menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav .menu a:hover {
+    background-color: #45a049;
+}
+
+/* Secciones */
+section {
+    padding: 2rem;
+}
+
+/* Portada */
 #portada {
     display: flex;
     justify-content: center;
@@ -36,8 +73,8 @@ header {
 }
 
 .imagen-portada {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 50%;
+    max-height: 50%;
     object-fit: cover;
     margin: 10px;
     border-radius: 10px;
@@ -65,7 +102,7 @@ header {
 }
 
 .btn-portada {
-    background-color: #02082b;
+    background-color: #4caf50;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -77,7 +114,7 @@ header {
     background-color: #45a049;
 }
 
-/* Estilos del formulario */
+/* Formulario */
 form {
     display: flex;
     flex-direction: column;
@@ -93,7 +130,7 @@ form input, form select, form button {
 }
 
 form button {
-    background-color: #02082b;
+    background-color: #4caf50;
     color: white;
     cursor: pointer;
 }
@@ -102,7 +139,16 @@ form button:hover {
     background-color: #45a049;
 }
 
-/* Estilo de la gráfica */
+#edadesHijosContainer {
+    margin-top: 1rem;
+}
+
+#tipoMascotaContainer {
+    display: none;
+    margin-top: 1rem;
+}
+
+/* Gráfica */
 #grafica {
     max-width: 600px;
     margin: 2rem auto;
@@ -115,10 +161,26 @@ canvas {
     border-radius: 5px;
 }
 
+/* Misión y Visión */
+#mision-vision {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+#mision-vision h2 {
+    font-size: 2rem;
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 /* Footer */
 footer {
     text-align: center;
     padding: 1rem;
     background-color: #333;
     color: white;
+    margin-top: 2rem;
 }

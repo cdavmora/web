@@ -73,8 +73,8 @@ section {
 }
 
 .imagen-portada {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 20%;
+    max-height: 20%;
     object-fit: cover;
     margin: 10px;
     border-radius: 10px;

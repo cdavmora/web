@@ -114,6 +114,32 @@ section {
     background-color: #45a049;
 }
 
+/* Texto descriptivo en la portada */
+.texto-descriptivo {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texto-descriptivo h2 {
+    color: #4caf50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.texto-descriptivo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+
 /* Formulario */
 form {
     display: flex;

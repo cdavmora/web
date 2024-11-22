@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,28 +14,70 @@ header {
     text-align: center;
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    margin-top: 10px;
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #333;
-    border-radius: 5px;
+/* Estilos para la portada */
+#portada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    position: relative;
 }
 
-nav a:hover {
+.portada-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-portada {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.texto-portada {
+    z-index: 10;
+    text-align: center;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.texto-portada h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.texto-portada p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-portada {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-portada:hover {
     background-color: #45a049;
 }
 
-main {
-    padding: 2rem;
-}
-
-#formulario {
-    margin-bottom: 2rem;
-}
-
+/* Estilos del formulario */
 form {
     display: flex;
     flex-direction: column;
@@ -59,6 +102,7 @@ form button:hover {
     background-color: #45a049;
 }
 
+/* Estilo de la gráfica */
 #grafica {
     max-width: 600px;
     margin: 2rem auto;
@@ -71,21 +115,10 @@ canvas {
     border-radius: 5px;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 1rem;
     background-color: #333;
     color: white;
-}
-
-/* Estilos específicos para la página de misión y visión */
-#Mision y #vision {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#Mision p, #vision p {
-    font-size: 1.2rem;
 }

@@ -36,8 +36,8 @@ header {
 }
 
 .imagen-portada {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
     margin: 10px;
     border-radius: 10px;

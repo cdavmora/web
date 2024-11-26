@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Empresa XYZ</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo básico para el reloj */
+        #reloj {
+            font-size: 1.5rem;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px auto;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <!-- Cabecera con el menú -->
@@ -17,6 +31,9 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Reloj -->
+    <div id="reloj">00:00:00</div>
 
     <!-- Portada -->
     <section id="portada">
@@ -53,5 +70,24 @@
     <footer>
         <p>&copy; 2024 Grupo 05 PSP. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Script para el reloj -->
+    <script>
+        function actualizarReloj() {
+            const ahora = new Date();
+            const horas = String(ahora.getHours()).padStart(2, '0');
+            const minutos = String(ahora.getMinutes()).padStart(2, '0');
+            const segundos = String(ahora.getSeconds()).padStart(2, '0');
+
+            const reloj = document.getElementById('reloj');
+            reloj.textContent = `${horas}:${minutos}:${segundos}`;
+        }
+
+        // Actualiza el reloj cada segundo
+        setInterval(actualizarReloj, 1000);
+
+        // Inicializa el reloj inmediatamente al cargar la página
+        actualizarReloj();
+    </script>
 </body>
 </html>

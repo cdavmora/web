@@ -49,10 +49,10 @@ form.cantidadHijos.addEventListener('input', function () {
     edadesHijosContainer.innerHTML = '';
     for (let i = 1; i <= cantidad; i++) {
         const label = document.createElement('label');
-        label.textContent = Edad del Hijo ${i}:;
+        label.textContent = `Edad del Hijo ${i}:`;
         const input = document.createElement('input');
         input.type = 'number';
-        input.name = edadHijo${i};
+        input.name = `edadHijo${i}`;
         input.required = true;
         edadesHijosContainer.appendChild(label);
         edadesHijosContainer.appendChild(input);
@@ -78,7 +78,7 @@ form.addEventListener('submit', function (event) {
     edadesEmpleados.push(edad);
 
     // Actualizamos las etiquetas (Empleados 1, Empleados 2, ...)
-    chart.data.labels.push(Empleado ${empleadosRegistrados});
+    chart.data.labels.push(`Empleado ${empleadosRegistrados}`);
 
     // Actualizamos los datos de la gráfica con la edad del empleado
     chart.data.datasets[0].data.push(edad);

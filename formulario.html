@@ -6,7 +6,7 @@
     <title>Formulario de Empleados</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-     <style>
+    <style>
         /* Estilo básico para el reloj */
         #reloj {
             font-size: 2rem;
@@ -28,8 +28,8 @@
 <body>
     <header>
         <h1>Registro de Empleados</h1>
-          <nav>
-             <ul class="menu">
+        <nav>
+            <ul class="menu">
                 <li><a href="Index.html">Home</a></li>
                 <li><a href="mision-vision.html">Misión y Visión</a></li>
             </ul>
@@ -58,6 +58,15 @@
 
                 <label for="edad">Edad:</label>
                 <input type="number" id="edad" name="edad" min="18" required>
+
+                <label for="profesion">Profesión:</label>
+                <input type="text" id="profesion" name="profesion" required>
+
+                <label for="dependencia">Dependencia:</label>
+                <input type="text" id="dependencia" name="dependencia" required>
+
+                <label for="cargo">Cargo:</label>
+                <input type="text" id="cargo" name="cargo" required>
 
                 <label for="cantidadHijos">Cantidad de Hijos:</label>
                 <input type="number" id="cantidadHijos" name="cantidadHijos" min="0" required>
@@ -91,4 +100,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

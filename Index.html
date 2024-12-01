@@ -4,9 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Empresa XYZ</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
-        /* Estilo básico para el reloj */
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: #4caf50;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #portada {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+        }
+        .btn-portada {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .btn-portada:hover {
+            transform: scale(1.1);
+            background-color: #4caf70;
+        }
         #reloj {
             font-size: 2rem;
             color: #4caf50;
@@ -17,10 +68,55 @@
             text-align: center;
             margin: 20px auto;
             display: inline-block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto flotante */
-            font-weight: bold; /* Negrita para mayor claridad */
-            font-family: 'Courier New', Courier, monospace; /* Fuente de estilo reloj digital */
-            animation: pulse 1s infinite ease-in-out; /* Animación suave */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            animation: pulse 1s infinite ease-in-out;
+            cursor: pointer;
+        }
+        footer {
+            background: #4caf50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #modal form {
+            display: flex;
+            flex-direction: column;
+        }
+        #modal form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+        #modal form button {
+            padding: 10px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #modal form button:hover {
+            background: #45a049;
+        }
+        body.oscuro {
+            background-color: #333;
+            color: #fff;
         }
     </style>
 </head>
@@ -29,7 +125,7 @@
     <header>
         <h1>Bienvenidos a Nuestra Empresa</h1>
         <nav>
-            <ul class="menu">
+            <ul>
                 <li><a href="formulario.html">Formulario</a></li>
                 <li><a href="mision-vision.html">Misión y Visión</a></li>
             </ul>
@@ -37,61 +133,77 @@
     </header>
 
     <!-- Reloj -->
-    <div id="reloj">00:00:00</div>
+    <div id="reloj" title="Haz clic para cambiar formato">00:00:00</div>
 
     <!-- Portada -->
-    <section id="portada">
-        <!-- Texto descriptivo -->
-        <div class="texto-descriptivo">
-            <h2>Sobre Nosotros</h2>
-            <p>
-                En nuestra página web encontrarás herramientas diseñadas para optimizar la gestión de empleados 
-                y la comunicación organizacional. Desde el registro eficiente de datos hasta la presentación de 
-                nuestra misión y visión, trabajamos para ofrecer soluciones que impulsen el crecimiento y la colaboración.
-            </p>
-        </div>
-
-        <!-- Imágenes de portada -->
-        <div class="portada-imagen">
-            <img src="img/3.jpg" alt="Politecnico Grancolombiano" class="imagen-portada">
-            <img src="img/1.jpg" alt="Equipo trabajando" class="imagen-portada">
-            <img src="img/2.jpg" alt="Oficina moderna" class="imagen-portada">
-            <img src="img/4.jpg" alt="Futuro" class="imagen-portada">
-            <img src="img/5.jpg" alt="Crecimiento Laboral" class="imagen-portada">
-        </div>
-
-        <!-- Botón hacia el formulario -->
-        <div class="texto-portada">
-            <h2>¡Registra a tus empleados fácilmente!</h2>
-            <p>
-                Comienza a usar nuestra plataforma y registra la información de tus empleados de manera rápida y sencilla.
-            </p>
-            <a href="formulario.html" class="btn-portada">Ir al Formulario</a>
-        </div>
+    <section id="portada" data-aos="fade-up">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            En nuestra página web encontrarás herramientas diseñadas para optimizar la gestión de empleados 
+            y la comunicación organizacional. ¡Descubre más!
+        </p>
+        <button class="btn-portada" onclick="abrirFormulario()">Registrar Empleados</button>
     </section>
+
+    <!-- Modal para el formulario -->
+    <div id="modal">
+        <h2>Formulario de Registro</h2>
+        <form>
+            <input type="text" placeholder="Nombre del empleado" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="cerrarFormulario()">Cerrar</button>
+        </form>
+    </div>
 
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 Grupo 05 PSP. Todos los derechos reservados.</p>
+        <button onclick="toggleTheme()">Cambiar Tema</button>
     </footer>
 
-    <!-- Script para el reloj -->
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+        AOS.init();
+
+        let formato24h = true;
+
+        // Reloj en tiempo real
         function actualizarReloj() {
             const ahora = new Date();
-            const horas = String(ahora.getHours()).padStart(2, '0');
+            let horas = ahora.getHours();
             const minutos = String(ahora.getMinutes()).padStart(2, '0');
             const segundos = String(ahora.getSeconds()).padStart(2, '0');
+
+            if (!formato24h) {
+                horas = horas % 12 || 12; // Formato 12h
+            }
 
             const reloj = document.getElementById('reloj');
             reloj.textContent = `${horas}:${minutos}:${segundos}`;
         }
 
-        // Actualiza el reloj cada segundo
         setInterval(actualizarReloj, 1000);
-
-        // Inicializa el reloj inmediatamente al cargar la página
         actualizarReloj();
+
+        document.getElementById('reloj').addEventListener('click', () => {
+            formato24h = !formato24h;
+        });
+
+        // Modal
+        function abrirFormulario() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function cerrarFormulario() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Tema oscuro
+        function toggleTheme() {
+            document.body.classList.toggle('oscuro');
+        }
     </script>
 </body>
 </html>
